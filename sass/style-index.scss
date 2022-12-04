@@ -1,0 +1,134 @@
+@use './components/' as *;
+
+html {
+	font-size: 62.5%;
+	background-color: $background;
+}
+
+.body {
+	position: relative;
+	font-size: 1rem;
+	background-color: $background;
+	&--stuck {
+		overflow: hidden;
+	}
+}
+
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	&__container {
+		position: relative;
+		padding: 2.2em 2em;
+		display: flex;
+		justify-content: space-between;
+		z-index: 1000;
+	}
+	&__logo {
+		display: flex;
+		align-items: center;
+	}
+	&__hamburger {
+		padding-block: 0.75em;
+		border: none;
+		background-color: transparent;
+	}
+	&__links {
+		display: none;
+	}
+	&__link {
+		padding: 0.8em;
+		&--btn {
+			margin-top: 1em;
+		}
+	}
+	&__popup {
+		position: fixed;
+		top: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 4em;
+		width: 100vw;
+		height: 100vh;
+		background-color: $background;
+		transition: translate 0.5s;
+		&--hidden {
+			translate: 100%;
+		}
+	}
+}
+
+.header {
+	margin-top: 79px;
+	padding: 2.4em 0 8em;
+	&__title,
+	&__text,
+	&__btn {
+		margin-inline: auto;
+	}
+	&__title,
+	&__text {
+		max-width: 335px;
+		text-align: center;
+	}
+	&__text {
+		padding: 1.34em 0 2.67em;
+	}
+	&__btn{
+		display: flex;
+		align-items: center;
+		gap: 0.625em;
+	}
+}
+
+.slider{
+	margin-bottom: 8em;
+	height: 259px;
+	background-color: $slider;
+}
+
+@media (min-width: 576px) {
+	.body {
+		&--stuck {
+			overflow: visible;
+		}
+	}
+	.nav {
+		&__hamburger {
+			display: none;
+		}
+		&__links {
+			display: flex;
+			align-items: center;
+			gap: 4em;
+		}
+		&__link {
+			&--btn {
+				margin-top: 0;
+				margin-left: 0.8em;
+			}
+		}
+		&__popup {
+			display: none;
+		}
+	}
+	.header {
+		margin-top: 104px;
+		padding: 9.2em 0 17.4em;
+		&__title {
+			max-width: 961px;
+		}
+		&__text {
+			max-width: 471px;
+		}
+	}
+	.slider{
+		margin-bottom: 12em;
+		height: 259px;
+		background-color: $slider;
+	}
+}

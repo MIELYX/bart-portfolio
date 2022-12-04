@@ -1,0 +1,44 @@
+@use './colors' as *;
+
+.heading{
+	font-family: 'Poppins', sans-serif;
+	&--orange{
+		color: $orange-index;
+	}
+	&--first{
+		font-size: 48px;
+		font-weight: 800;
+		line-height: 120%;
+	}
+}
+
+
+
+
+.text {
+	font-family: 'Inter', sans-serif;
+	// font-family: 'Poppins', sans-serif;
+
+	&--navpopup, &--first {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 150%;
+	}
+	&--first{
+		font-size: 16px;
+	}
+	&--second{
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 1.67em;
+		color: $secondary-text;
+	}
+}
+
+@media (min-width: 576px) {
+	.heading{
+		&--first{
+			font-size: 96px;
+		}
+	}
+}
