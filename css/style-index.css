@@ -78,9 +78,9 @@ button {
 
 .btn-index {
   padding: 1em 2em;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid #1f1f3b;
   border-radius: 0.75em;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #1f1f3b;
   transition: background-color 0.3s;
 }
 .btn-index--block {
@@ -112,6 +112,7 @@ html {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1000;
 }
 .nav__container {
   position: relative;
@@ -158,11 +159,13 @@ html {
 .header {
   margin-top: 79px;
   padding: 2.4em 0 8em;
+  overflow: hidden;
 }
 .header__title, .header__text, .header__btn {
   margin-inline: auto;
 }
 .header__title, .header__text {
+  position: relative;
   max-width: 335px;
   text-align: center;
 }
@@ -173,6 +176,9 @@ html {
   display: flex;
   align-items: center;
   gap: 0.625em;
+}
+.header__arrow, .header__circle {
+  display: none;
 }
 
 .slider {
@@ -214,5 +220,55 @@ html {
     margin-bottom: 12em;
     height: 259px;
     background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+@media (min-width: 992px) {
+  .header__arrow {
+    display: block;
+    position: absolute;
+    top: -25px;
+    right: -150px;
+  }
+}
+@media (min-width: 1200px) {
+  .header__circle {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background-size: cover;
+    transition: scale 0.3s;
+  }
+  .header__circle::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    transition: background-color 0.3s;
+  }
+  .header__circle:hover::after {
+    background-color: transparent;
+  }
+  .header__circle--big {
+    left: 0;
+    width: 144px;
+    height: 144px;
+    background-image: url("../img/healthcare.png");
+  }
+  .header__circle--big:hover {
+    scale: 2.125;
+  }
+  .header__circle--small {
+    top: 50%;
+    right: -100px;
+    width: 122px;
+    height: 122px;
+    background-image: url("../img/underground.png");
+  }
+  .header__circle--small:hover {
+    scale: 2.5;
   }
 }/*# sourceMappingURL=style-index.css.map */
