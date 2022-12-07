@@ -8,14 +8,19 @@
 .btn-index {
 	padding: 1em 2em;
 	border: 2px solid $btn-index;
-    border-radius: 0.75em;
+	border-radius: 0.75em;
 	background-color: $btn-index;
 	transition: background-color 0.3s;
-	&--block{
+	&--block {
 		display: block;
 		width: max-content;
 	}
-	&:hover{
+	&:hover {
 		background-color: transparent;
 	}
+}
+
+@mixin blur($blur, $opacity) {
+	backdrop-filter: blur($blur);
+	background-color: rgba(5, 6, 35, $opacity);
 }

@@ -1,44 +1,84 @@
 @use './colors' as *;
 
-.heading{
+.heading {
 	font-family: 'Poppins', sans-serif;
-	&--orange{
+	font-weight: 800;
+	line-height: 130%;
+	letter-spacing: -0.02em;
+	&--orange {
 		color: $orange-index;
 	}
-	&--first{
+	&--first {
 		font-size: 48px;
-		font-weight: 800;
 		line-height: 120%;
+		letter-spacing: -0.03em;
+	}
+	&--second {
+		font-size: 32px;
+	}
+	&--third, &--fourth {
+		font-size: 22px;
+		font-weight: 700;
 	}
 }
-
-
-
 
 .text {
 	font-family: 'Inter', sans-serif;
 	// font-family: 'Poppins', sans-serif;
-
-	&--navpopup, &--first {
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 150%;
+	&--navpopup,
+	&--first,
+	&--third {
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 150%;
 	}
-	&--first{
+	&--first,
+	&--third {
 		font-size: 16px;
 	}
-	&--second{
+	&--second {
 		font-size: 18px;
 		font-weight: 400;
 		line-height: 1.67em;
 		color: $secondary-text;
 	}
+	&--third {
+		font-feature-settings: 'salt' on;
+		font-weight: 400;
+		font-size: 14px;
+		&--small {
+			font-size: 11px;
+		}
+	}
+	&--fourth{
+		font-size: 22px;
+	}
+	&--bold{
+		font-weight: 700;
+	}
 }
 
 @media (min-width: 576px) {
-	.heading{
-		&--first{
+	.heading {
+		&--first {
 			font-size: 96px;
+		}
+		&--second {
+			font-size: 40px;
+			letter-spacing: -0.03em;
+		}
+		&--third {
+			font-size: 32px;
+			font-weight: 800;
+		}
+
+	}
+	.text {
+		&--third {
+			font-size: 16px;
+			&--small {
+				font-size: 16px;
+			}
 		}
 	}
 }
