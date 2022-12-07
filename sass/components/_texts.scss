@@ -16,7 +16,8 @@
 	&--second {
 		font-size: 32px;
 	}
-	&--third, &--fourth {
+	&--third,
+	&--fourth {
 		font-size: 22px;
 		font-weight: 700;
 	}
@@ -50,10 +51,16 @@
 			font-size: 11px;
 		}
 	}
-	&--fourth{
+	&--fourth {
 		font-size: 22px;
 	}
-	&--bold{
+	&--fifth {
+		font-size: 12px;
+		font-weight: 600;
+		line-height: 150%;
+		color: #828391;
+	}
+	&--bold {
 		font-weight: 700;
 	}
 }
@@ -71,7 +78,6 @@
 			font-size: 32px;
 			font-weight: 800;
 		}
-
 	}
 	.text {
 		&--third {

@@ -3,6 +3,7 @@
 html {
 	font-size: 62.5%;
 	background-color: $background;
+	scroll-behavior: smooth;
 }
 
 .body {
@@ -28,6 +29,7 @@ html {
 		z-index: 1000;
 	}
 	&__logo {
+		max-width: 35px;
 		display: flex;
 		align-items: center;
 	}
@@ -92,26 +94,45 @@ html {
 	}
 }
 
-.slider {
-	margin-bottom: 8em;
-	height: 259px;
-	background-color: $slider;
-}
-
 .case-studies {
+	padding-bottom: 8.8em;
 	&__header {
 		padding-bottom: 4.8em;
 	}
 	&__cards {
 		display: grid;
+		align-items: center;
 		grid-template-columns: 1fr;
-		grid-template-rows: 1fr;
+		row-gap: 4.8em;
 	}
 	&__card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-inline: auto;
 		padding: 1.6em 1.6em 1.8em;
 		border-radius: 8px;
 		max-width: 588px;
+		aspect-ratio: 1/1.2;
 		background-size: cover;
+		overflow: hidden;
+		&--background {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: initial;
+			height: 100%;
+			max-width: none;
+			translate: -50% -50%;
+			transition: transform 0.3s, opacity 0.3s;
+			opacity: 0.8;
+			&:hover {
+				transform: scale(1.2);
+				transform-origin: 50% 50%;
+				opacity: 1;
+			}
+		}
 		&--tags {
 			height: 80px;
 		}
@@ -127,17 +148,12 @@ html {
 			}
 		}
 		&--description {
-			margin-top: 62.5%;
 			padding: 2.4em;
 			border-radius: 12px;
-			height: 100%;
 			@include blur(30px, 0.15);
 		}
 		&--title {
 			margin-bottom: 0.25em;
-		}
-		&--iplus {
-			background-image: url('../img/iplus-mockup.jpg');
 		}
 	}
 }
@@ -157,10 +173,29 @@ html {
 		gap: 1.6em;
 	}
 	&__img {
+		position: relative;
+		display: grid;
 		align-self: center;
 		justify-self: center;
 		width: 100%;
 		max-width: 570px;
+		&--bart {
+			position: relative;
+			width: 100%;
+		}
+		&--ux,
+		&--ui {
+			position: absolute;
+			z-index: 100;
+		}
+		&--ux {
+			top: 15%;
+			right: 5%;
+		}
+		&--ui {
+			left: 8%;
+			bottom: 15%;
+		}
 	}
 }
 
@@ -178,7 +213,7 @@ html {
 		display: block;
 		padding: 50px 0;
 		border-radius: 20px;
-		background-image: $border;
+		background-image: $btn-index;
 		transition: transform 0.3s;
 		&:hover {
 			transform: scale(0.9);
@@ -208,6 +243,19 @@ html {
 			left: -16px;
 			transform: translate(-100%, -50%);
 		}
+		&--orange {
+			background-image: $border;
+		}
+	}
+}
+
+.footer {
+	padding: 14.6em 0 6.4em;
+	&__content {
+		text-align: center;
+	}
+	&__text {
+		padding-bottom: 0.35em;
 	}
 }
 
@@ -254,6 +302,12 @@ html {
 	.know-me-better {
 		padding-bottom: 16.2em;
 	}
+	.case-studies {
+		padding-bottom: 12em;
+		&__card {
+			border-radius: 16px;
+		}
+	}
 }
 
 @media (min-width: 992px) {
@@ -277,6 +331,16 @@ html {
 			justify-self: flex-end;
 		}
 	}
+	.footer {
+		padding: 16em 0 6.4em;
+		&__content {
+			display: flex;
+			justify-content: space-between;
+		}
+		&__text {
+			padding-bottom: 0;
+		}
+	}
 }
 
 @media (min-width: 1200px) {
@@ -286,21 +350,8 @@ html {
 			position: absolute;
 			border-radius: 50%;
 			background-size: cover;
-			transition: scale 0.3s;
-			&::after {
-				content: '';
-				position: absolute;
-				left: 0;
-				border-radius: 50%;
-				width: 100%;
-				height: 100%;
-				background-color: rgba($color: #000000, $alpha: 0.1);
-				z-index: 10;
-				transition: background-color 0.3s;
-			}
-			&:hover::after {
-				background-color: transparent;
-			}
+			transition: scale 0.3s, opacity 0.3s;
+			opacity: 0.8;
 			&--big {
 				left: 0;
 				width: 144px;
@@ -320,6 +371,23 @@ html {
 					scale: 2.5;
 				}
 			}
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+	.case-studies {
+		&__header {
+			padding-bottom: 4.8em;
+		}
+		&__cards {
+			grid-template-columns: repeat(2, 588px);
+			justify-content: space-between;
+			row-gap: 8.8em;
+		}
+		&__card {
+			margin-inline: 0;
+			padding: 2.4em;
 		}
 	}
 	.contact-me {
