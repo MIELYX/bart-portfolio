@@ -37,7 +37,8 @@
 	&--third {
 		font-size: 16px;
 	}
-	&--second {
+	&--second,
+	&--sixth {
 		font-size: 18px;
 		font-weight: 400;
 		line-height: 1.67em;
@@ -59,6 +60,9 @@
 		font-weight: 600;
 		line-height: 150%;
 		color: #828391;
+	}
+	&--sixth {
+		font-size: 16px;
 	}
 	&--bold {
 		font-weight: 700;
