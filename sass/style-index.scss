@@ -81,17 +81,26 @@ html {
 		max-width: 335px;
 		text-align: center;
 	}
+	&__circle,
+	&__btn,
+	&__text,
+	&__title {
+		animation: 0.6s ease-out both showup;
+	}
+	&__arrow,
+	&__circle {
+		display: none;
+		animation-delay: 1.5s;
+	}
 	&__text {
 		padding: 1.34em 0 2.67em;
+		animation-delay: 0.5s;
 	}
 	&__btn {
 		display: flex;
 		align-items: center;
 		gap: 0.625em;
-	}
-	&__arrow,
-	&__circle {
-		display: none;
+		animation-delay: 1s;
 	}
 }
 
@@ -154,9 +163,7 @@ html {
 				opacity: 1;
 			}
 		}
-		&--tags {
-			height: 80px;
-		}
+
 		&--tag {
 			display: inline-block;
 			margin-right: 0.5em;
@@ -309,12 +316,9 @@ html {
 			display: none;
 		}
 	}
-	.slider{
-		margin-bottom: 10.2em;
-	}
 	.header {
 		margin-top: 104px;
-		padding: 7.2em 0 17.4em;
+		padding: 7.2em 0 13.5em;
 		&__title {
 			max-width: 961px;
 		}
@@ -322,13 +326,26 @@ html {
 			max-width: 471px;
 		}
 	}
-	.know-me-better {
-		padding-bottom: 16.2em;
+	.slider {
+		margin-bottom: 13.5em;
 	}
 	.case-studies {
 		padding-bottom: 12em;
 		&__card {
 			border-radius: 16px;
+		}
+	}
+	.know-me-better {
+		padding-bottom: 16.2em;
+	}
+}
+@media (min-width: 768px) {
+	.case-studies {
+		&__cards {
+			grid-template-columns: repeat(2, 1fr);
+			justify-content: space-between;
+			column-gap: 3.2em;
+			row-gap: 4.4em;
 		}
 	}
 }
