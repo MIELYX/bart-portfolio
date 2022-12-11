@@ -20,17 +20,6 @@
 	}
 }
 
-@keyframes showup {
-	from {
-		translate: 0 30px;
-		opacity: 0;
-	}
-	to{
-		translate: 0 0;
-		opacity: 1;
-	}
-}
-
 @mixin blur($blur, $opacity) {
 	backdrop-filter: blur($blur);
 	background-color: rgba(5, 6, 35, $opacity);

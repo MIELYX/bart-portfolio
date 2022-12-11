@@ -1,15 +1,11 @@
-const hamburgerBtn = document.querySelector('.nav__hamburger')
-const navPopup = document.querySelector('.nav__popup')
-const navItems = document.querySelectorAll('.nav-item')
+const burger = document.querySelector('.hamburger')
+const nav = document.querySelector('.nav__slide-out')
+const items = document.querySelectorAll('.item')
 
-hamburgerBtn.addEventListener('click', () => {
-	navPopup.classList.toggle('nav__popup--hidden')
-	document.body.classList.toggle('body--stuck')
-})
+const slide = () => {
+	nav.classList.toggle('slide')
+	document.body.classList.toggle('sticky')
+}
 
-navItems.forEach(element =>
-	element.addEventListener('click', () => {
-		navPopup.classList.add('nav__popup--hidden')
-		document.body.classList.remove('body--stuck')
-	})
-)
+burger.addEventListener('click', slide)
+items.forEach(item => item.addEventListener('click', slide))
